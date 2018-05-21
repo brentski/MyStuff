@@ -1,0 +1,85 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "VisualEditor0",
+            "Effect": "Deny",
+            "Action": "ec2:RunInstances",
+            "Resource": "arn:aws:ec2:us-east-1:274327641857:instance/*",
+            "Condition": {
+                "Null": {
+                    "aws:RequestTag/owner": "true"
+                }
+            }
+        },
+        {
+            "Sid": "VisualEditor1",
+            "Effect": "Deny",
+            "Action": "ec2:RunInstances",
+            "Resource": "arn:aws:ec2:us-east-1:274327641857:instance/*",
+            "Condition": {
+                "Null": {
+                    "aws:RequestTag/Owner": "true"
+                }
+            }
+        },
+        {
+            "Sid": "VisualEditor2",
+            "Effect": "Deny",
+            "Action": "ec2:RunInstances",
+            "Resource": "arn:aws:ec2:us-east-1:274327641857:instance/*",
+            "Condition": {
+                "Null": {
+                    "aws:RequestTag/expires": "true"
+                }
+            }
+        },
+        {
+            "Sid": "VisualEditor3",
+            "Effect": "Deny",
+            "Action": "ec2:RunInstances",
+            "Resource": "arn:aws:ec2:us-west-1:274327641857:instance/*",
+            "Condition": {
+                "Null": {
+                    "aws:RequestTag/owner": "true"
+                }
+            }
+        },
+        {
+            "Sid": "VisualEditor4",
+            "Effect": "Deny",
+            "Action": "ec2:RunInstances",
+            "Resource": "arn:aws:ec2:us-west-1:274327641857:instance/*",
+            "Condition": {
+                "Null": {
+                    "aws:RequestTag/Owner": "true"
+                }
+            }
+        },
+        {
+            "Sid": "VisualEditor5",
+            "Effect": "Deny",
+            "Action": "ec2:RunInstances",
+            "Resource": "arn:aws:ec2:us-west-1:274327641857:instance/*",
+            "Condition": {
+                "Null": {
+                    "aws:RequestTag/expires": "true"
+                }
+            }
+        },
+        {
+            "Sid": "VisualEditor6",
+            "Effect": "Deny",
+            "Action": "*",
+            "Resource": "*",
+            "Condition": {
+                "StringNotEquals": {
+                    "aws:RequestedRegion": [
+                        "us-east-1",
+                        "us-west-1"
+                    ]
+                }
+            }
+        }
+    ]
+}
